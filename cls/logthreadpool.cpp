@@ -111,6 +111,7 @@ ErrCode ThreadPool::Enqueue(std::shared_ptr<BatchLogGroup> batch)
 
 ThreadPool::~ThreadPool()
 {
+    std::cout << __FILE__ << __LINE__ << __FUNCTION__ << "ThreadPool::~ThreadPool()" << std::endl;
     shutdownflag_ = true;
     {
         condition_.notify_all();
@@ -126,6 +127,7 @@ ThreadPool::~ThreadPool()
 
 void ThreadPool::LogThreadPoolDestroy()
 {
+    std::cout << __FILE__ << __LINE__ << __FUNCTION__ << "void ThreadPool::LogThreadPoolDestroy()" << std::endl;
     shutdownflag_ = true;
     {
         condition_.notify_all();

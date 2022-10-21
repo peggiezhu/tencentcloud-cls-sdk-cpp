@@ -92,6 +92,7 @@ void LogTimer::Start()
 
 LogTimer::~LogTimer()
 {
+    std::cout << __FILE__ << __LINE__ << __FUNCTION__ << "LogTimer::~LogTimer()" << std::endl;
     shutdownflag_ = true;
     if (td_.joinable())
         td_.join();
@@ -99,6 +100,7 @@ LogTimer::~LogTimer()
 
 void LogTimer::LogTimerDestroy()
 {
+    std::cout << __FILE__ << __LINE__ << __FUNCTION__ << "void LogTimer::LogTimerDestroy()" << std::endl;
     shutdownflag_ = true;
     if (td_.joinable())
         td_.join();

@@ -17,6 +17,7 @@ LogAccumulator::LogAccumulator(std::shared_ptr<ThreadPool>& threadpool, std::sha
 
 LogAccumulator::~LogAccumulator()
 {
+    std::cout << __FILE__ << __LINE__ << __FUNCTION__ << "LogAccumulator::~LogAccumulator()" << std::endl;
     shutdownflag_ = true;
 }
 
@@ -141,6 +142,7 @@ ErrCode LogAccumulator::AddTask(const std::string& topicId, std::shared_ptr<Batc
 
 void LogAccumulator::LogAccumulatorDestroy()
 {
+    std::cout << __FILE__ << __LINE__ << __FUNCTION__ << "void LogAccumulator::LogAccumulatorDestroy()" << std::endl;
     shutdownflag_ = true;
 }
 

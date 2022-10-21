@@ -52,6 +52,7 @@ std::vector<std::shared_ptr<BatchLogGroup>> LogRetryQueue::GetRetryBatch()
 
 void LogRetryQueue::LogRetryQueueDestroy()
 {
+    std::cout << __FILE__ << __LINE__ << __FUNCTION__ << "void LogRetryQueue::LogRetryQueueDestroy()" << std::endl;
     shutdownflag_ = true;
 }
 } // namespace tencent_log_sdk_cpp_v2
