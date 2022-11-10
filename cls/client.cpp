@@ -311,6 +311,7 @@ void LOGClient::SendRequest(const string& httpMethod, const string& url, const s
     string host = GetClsHost();
     SetCommonHeader(header, body.length());
     std::string sign = signature(mAccessKeyId, mAccessKey, httpMethod, url, parameterList, header, 300);
+    std::cout<<"sign:"<<sign<<std::endl;
     header[AUTHORIZATION] = sign;
 
     string queryString;
